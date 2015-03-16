@@ -7,13 +7,13 @@ function addNewItem(list, itemText) {
     todoListElement.insertBefore(listItem, todoListElement.firstChild);
 
     listItem.onclick = deleteItem;
-};
+}
 
 
 
 function deleteItem() {
-    this.remove(); 
-};
+    this.remove();
+}
 
 
 
@@ -22,11 +22,11 @@ inptNewItemText.focus();
 
 
 
-inptNewItemText.onkeyup = function(event) {
-    if (event.which == 13) {
+inptNewItemText.onkeyup = function (event) {
+    if (event.which === 13) {
         var itemText = inptNewItemText.value;
 
-        if (itemText == "") {
+        if (itemText === "") {
             return false;
         }
 
@@ -34,6 +34,6 @@ inptNewItemText.onkeyup = function(event) {
 
         inptNewItemText.value = "";
         inptNewItemText.focus();
-        
-    };
-}
+
+    }
+};
