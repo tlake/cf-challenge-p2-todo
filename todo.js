@@ -1,6 +1,3 @@
-// each item should look like this:
-// <li><span>This is what a task will be!</span></li>
-
 function addNewItem(list, itemText) {
     var todoListElement = document.getElementById("todoList");
     var listItem = document.createElement("li");
