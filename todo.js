@@ -1,27 +1,42 @@
 // each item should look like this:
 // <li><span>This is what a task will be!</span></li>
 
-
-var btnNew = document.getElementById("btnAdd");
-
 function addNewItem(list, itemText) {
+    var todoListElement = document.getElementById("todoList");
     var listItem = document.createElement("li");
+
     listItem.innerText = itemText;
 
-    list.appendChild(listItem);
+    todoListElement.insertBefore(listItem, todoListElement.firstChild);
+
+    listItem.onclick = deleteItem;
 };
 
-var inNewTask = document.getElementById("inNewTask");
-inNewTask.focus();
 
-btnNew.onclick = function() {
-    var itemText = inNewTask.value;
 
-    if (!itemText || itemText == "") {
-        return false;
-    }
+function deleteItem() {
+    this.remove(); 
+};
 
-    addNewItem(document.getElementById("todoList"), itemText);
 
-    inNewTask.focus();
+
+var inptNewItemText = document.getElementById("inptNewItemText");
+inptNewItemText.focus();
+
+
+
+inptNewItemText.onkeyup = function(event) {
+    if (event.which == 13) {
+        var itemText = inptNewItemText.value;
+
+        if (itemText == "") {
+            return false;
+        }
+
+        addNewItem(document.getElementById("todoList"), itemText);
+
+        inptNewItemText.value = "";
+        inptNewItemText.focus();
+        
+    };
 }

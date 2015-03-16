@@ -6,8 +6,18 @@ ul {
 }
 
 li {
-    border: 1px solid #ccc;
-    background: #eee;
-    padding: 5px 10px;
-    color: #000;
+    border: 1px solid indigo;
+    border-radius: 10px;
+    background: lavender;
+    padding: 5px 20px;
+    color: indigo;
+}
+
+input {
+    width: 500px;
+}
+
+.goal {
+    font-style: italic;
+    width: 500px;
 }
