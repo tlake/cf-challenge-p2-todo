@@ -1,11 +1,21 @@
 function addNewItem(list, itemText) {
     var todoListElement = document.getElementById("todoList");
     var listItem = document.createElement("li");
+    
+    listItem.className = "unhovered";
 
     listItem.innerText = itemText;
 
     todoListElement.insertBefore(listItem, todoListElement.firstChild);
 
+    listItem.onmouseover = function() {
+        this.className = "hovered";
+    };
+    
+    listItem.onmouseout = function() {
+        this.className = "unhovered";
+    };
+    
     listItem.onclick = deleteItem;
 }
 
